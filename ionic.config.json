@@ -1,0 +1,7 @@
+{
+  "name": "gameAll-proyecto",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

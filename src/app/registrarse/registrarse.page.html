@@ -1,0 +1,27 @@
+  <div class="contenedor">
+    <div class="registro">
+      <form [formGroup]="registroForm" (ngSubmit)="registrarUsuario()">
+        <h1>Sign in</h1>
+        <label for="email">Correo</label>
+        <input type="email" placeholder="Correo" formControlName="email">
+
+        <label for="nickname">Usuario</label>
+        <input type="text" placeholder="Nickname" formControlName="nickname">
+        
+        <label for="contrasena">Contraseña</label>
+        <input type="password" placeholder="Contraseña" formControlName="contrasena">
+      
+        <label for="contrasenaConfirm">Repetir contraseña</label>
+        <input type="password" placeholder="Contraseña" formControlName="contrasenaConfirm">
+      
+        <button expand="block" type="submit">Registrarse</button>
+        <p>¿Ya tienes cuenta? <a (click)="navigateTo('/login')">¡Iniciar sesión!</a></p>
+      </form>
+      
+  
+      <div class="back" (click)="navigateTo('/home')">
+        <ion-icon name="caret-back"></ion-icon> Regresar
+      </div>
+  
+    </div>
+  </div>

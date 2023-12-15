@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo&family=Asul&family=Cinzel&family=Comic+Neue&display=swap');
+
+.header {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    align-items: center; 
+    border-radius: 10px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Cinzel', serif;
+    background-color: #fff;
+  }
+  
+  .header-menu {
+    display: flex;
+    border-radius: 15px;
+    background: #000;
+  }
+  
+  .header-menu ion-list {
+    display: flex;
+    gap: 10px;
+    border-radius: 0 15px 15px 0;
+    background: #000;
+    padding-right: 20px;
+  }
+  
+  .header-menu ion-label {
+    font-size: 1.3rem;
+    font-family: 'Cinzel', serif;
+  }
+  
+  .header-menu ion-title {
+    font-weight: 500;
+    font-size: 1.4rem;
+    font-family: 'Cinzel', serif;
+    color: white;
+  }
+  
+  //SESIÓN
+  .sesion {
+    font-size: 1.5rem;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  
+  .sesion-informacion {
+    position: absolute;
+    top: 80px;
+    right: 110px;
+    z-index: 10;
+    padding: 12px;
+    width: 180px;
+    background: #282828;
+    color: white;
+    font-family: 'Arimo', serif;
+    border-radius: 5px;
+    box-shadow: 1px 3px 5px rgba(0,0,0,0.7);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sesion-informacion h6 {
+    margin: 0;
+    font-size: 1rem;
+    color: #d4d4d4;
+  }
+  
+  .sesion-informacion p {
+    margin: 0 0 5px 0;
+    font-size: 1rem;
+  }
+  
+  .sesion-informacion ion-icon {
+    margin-top: -12px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-left: auto;
+  }
+  
+  .sesion-informacion ion-icon:hover {
+    color: #bd3f3f;
+  }
+  //FIN DE SESIÓN
+  
+  .header-menu ion-item {
+    cursor: pointer;
+    --background: rgb(0, 0, 0);
+  }
+  
+  .transition-color {
+    transition: color 0.5s ease; /* Puedes ajustar la duración y el tipo de transición según tus necesidades */
+  }
+  
+  ///FOOTER
+  //@import url('https://fonts.cdnfonts.com/css/allerta');
+  ion-footer {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Allerta', sans-serif;
+  }
+  
+  ion-footer img{
+    border-radius: 50%;
+    width: 140px; 
+    height: 140px; 
+  }
+  
+  ion-footer h3{
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    font-size: 14px;
+  }
+  
+  .faqs{
+    padding: 4.5vw;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 5px;
+  }
+  
+  .faqs ion-label {
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 1rem;
+  }
+  
+  .faqs ion-label:hover {
+    color: #e26f6f;
+  }
+  ion-footer ion-icon {
+    font-size: 42px;
+  }
+  
+  /* HTML: <div class="loader"></div> */
+  .loader {
+      margin: auto;
+      width: fit-content;
+      font-weight: bold;
+      font-family: sans-serif;
+      font-size: 30px;
+      padding-bottom: 8px;
+      background: linear-gradient(currentColor 0 0) 0 100%/0% 3px no-repeat;
+      animation: l2 2s linear infinite;
+    }
+    .loader:before {
+      content:"Loading..."
+    }
+    @keyframes l2 {to{background-size: 100% 3px}}
+  
+  

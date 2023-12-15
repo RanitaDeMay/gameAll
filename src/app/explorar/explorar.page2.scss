@@ -1,0 +1,165 @@
+
+//SOLICITAR JUEGO
+.contenedor-proponer {
+    margin-bottom: 40px;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .contenedor-proponer div {
+    border-radius: 10px;
+    box-shadow: 3px 2px 6px rgba(0,0,0,0.5);
+    padding: 30px;
+    text-align: center;
+  }
+  
+  .contenedor-proponer div h2 {
+    margin: 0;
+    font-family: 'Asul', serif;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #212121;
+  }
+  
+  .contenedor-proponer div p {
+    font-family: 'Arimo', serif;
+    color: #212121;
+    font-size: 0.9rem
+  }
+  
+  .contenedor-proponer div button {
+    padding: 15px;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    background: rgb(56, 102, 56);
+    font-size: 1rem;
+    font-family: 'Arimo', serif;
+    margin-top: 8px;
+    transition: 0.4s;
+  }
+  
+  .contenedor-proponer div button:hover {
+    background: rgb(69, 125, 69);
+  }
+  
+  //FORMULARIO PARA AGREGAR
+  .formulario-proponer {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,0.4);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .formulario-proponer form {
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    background: #fff;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 2px 3px 6px rgba(0,0,0,0.5);
+  }
+  
+  .formulario-proponer form h2 {
+    margin: 0;
+    font-size: 2.2rem;
+    font-family: 'Asul', serif;
+    color: #202020;
+    margin-bottom: 20px;
+  }
+  
+  .formulario-proponer form input {
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-family: 'Arimo', sans-serif;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    background: #c9c7c7
+  }
+  
+  .formulario-proponer form input:focus {
+    outline: none;
+  }
+  
+  .formulario-proponer form p {
+    font-family: 'Arimo', serif;
+    font-size: 1rem;
+    color: #343434;
+    text-align: justify;
+    margin: 0;
+    margin-bottom: 15px;
+  }
+  
+  .formulario-proponer form button {
+    padding: 15px;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    background: rgb(56, 102, 56);
+    font-size: 1rem;
+    font-family: 'Arimo', serif;
+    margin-top: 8px;
+    transition: 0.4s;
+  }
+  
+  .formulario-proponer form button:hover {
+    background: rgb(69, 125, 69);
+  }
+  
+  
+  .formulario-proponer ion-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    color: white;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+  
+  .formulario-proponer ion-icon:hover {
+    color: rgb(97, 247, 97);
+  }
+  
+  .contenido-resena-explorar div p{
+    display: flex;
+    flex-direction: row;
+    font-size: 0.92rem;
+    margin: 0;
+    color: #202020;
+    font-family: 'Comic neue', cursive;
+    padding: 1px;
+  }
+
+  .contenido-resena-explorar button {
+    padding: 8px;
+    border-radius: 10px;
+    margin-top: auto;
+    font-family: 'Arimo', serif;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    background: #000;
+    transition: 0.4s;
+  }
+
+  .contenido-resena-explorar button:hover {
+    background: #212121;
+  }
+
+  .grid-item:hover {
+    box-shadow: 4px 7px 10px rgba(0,0,0,0.7);
+  }

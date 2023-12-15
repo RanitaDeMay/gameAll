@@ -11,6 +11,34 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'explorar',
+    loadChildren: () => import('./explorar/explorar.module').then(m => m.ExplorarPageModule)
+  },
+  {
+    path: 'explorar',
+    loadChildren: () => import('./explorar/explorar.module').then( m => m.ExplorarPageModule)
+  },
+  {
+    path: 'explorar',
+    loadChildren: () => import('./explorar/explorar.module').then( m => m.ExplorarPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'registrarse',
+    loadChildren: () => import('./registrarse/registrarse.module').then( m => m.RegistrarsePageModule)
+  },
+  {
+    path: 'juego-resena',
+    loadChildren: () => import('./juego-resena/juego-resena.module').then( m => m.JuegoResenaPageModule)
+  },
+  {
+    path: 'solicitudes',
+    loadChildren: () => import('./solicitudes/solicitudes.module').then( m => m.SolicitudesPageModule)
+  },
 ];
 
 @NgModule({

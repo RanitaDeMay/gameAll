@@ -1,0 +1,19 @@
+<div class="contenedor">
+  <div class="iniciar-sesion">
+    <form [formGroup]="inicioSesionForm" (ngSubmit)="iniciarSesion()">
+      <h1>Log in</h1>
+        <label for="">Correo</label>
+        <input type="email" placeholder="Correo"  formControlName="email">
+        
+        <label for="">Contraseña</label>
+        <input type="password" placeholder="Contraseña"  formControlName="contrasena">
+      <button expand="block" type="submit">Iniciar Sesión</button>
+      <p>¿No tienes cuenta? <a (click)="navigateTo('/registrarse')">¡Crear cuenta!</a></p>
+    </form>
+
+    <div class="back" (click)="navigateTo('/home')">
+      <ion-icon name="caret-back"></ion-icon> Regresar
+    </div>
+  </div>
+</div>
+

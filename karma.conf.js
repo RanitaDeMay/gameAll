@@ -32,6 +32,11 @@ module.exports = function (config) {
         { type: 'text-summary' }
       ]
     },
+    resolve: {
+      fallback: {
+        "path": false
+      }
+    },
     reporters: ['progress', 'kjhtml'],
     port: 9876,
     colors: true,

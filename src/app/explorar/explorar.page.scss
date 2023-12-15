@@ -1,0 +1,145 @@
+// BLOQUE SUPERIOR EXPLORAR
+.explorar-top {
+  padding: 30px 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.explorar-top h1 {
+  font-size: 2.1rem;
+  font-family: 'Asul', serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.explorar-top p {
+  font-size: 1.1rem;
+  width: 40%;
+  font-family: 'Arimo', serif;
+}
+
+.buscar {
+  display: flex;
+  flex-direction: row;
+  height: 40px;
+}
+
+.buscar ion-icon {
+  background: #202020;
+  height: 100%;
+  color: white;
+  padding: 0 12px 0 12px;
+  border-radius: 10px 0 0 10px;
+}
+
+.buscar input {
+  width: 200px;
+  border: none;
+  background: #202020;
+  border-radius: 0 10px 10px 0;
+  padding-left: 10px;
+  color: #fff;
+  font-family: 'Comic neue', cursive;
+  font-size: 1.1rem;
+  outline: none;
+}
+
+.buscar ul {
+  display: flex;
+  align-self: center;
+  gap: 30px;
+  color: #000;
+  list-style: none;
+  margin-left: auto;
+  padding-right: 5px;
+}
+
+.buscar ul li {
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 1.15rem;
+  font-family: 'Arimo';
+  padding: 10px;
+  transition: 0.5s;
+}
+
+.buscar ul li:hover {
+  background: rgba(6, 127, 167, 0.256);
+}
+
+//content
+ion-content {
+    margin: 10px;
+}
+  
+ion-item {
+    cursor: pointer;
+}
+  
+  .grid-container {
+    padding: 20px 100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px; /* Espaciado entre los elementos */
+  }
+  
+  .grid-item {
+    height: 520px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    transition: 0.5s;
+    box-shadow: 4px 1px 5px rgba(0,0,0,0.3);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    cursor: pointer;
+  }
+
+  .imagen-resena {
+    flex: 3;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .contenido-resena-explorar {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 15px 10px 15px;
+    transition: 0.8s;
+    background: white;
+    flex: 2;
+  }
+
+  .contenido-resena-explorar h3 {
+    font-family: 'Comic neue', serif;
+    font-size: 1.55rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding-bottom: 2px;
+    margin: 0;
+  }
+
+  .contenido-resena-explorar div {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    font-family: 'Arimo', serif;
+    gap: 10px;
+  }
+
+  #ac {
+    font-family: 'Arimo', serif;
+    font-size: 0.9rem;
+    color: #202020;
+    text-align: justify;
+    overflow: hidden;
+    height: 80px;
+  }
+
+  hr {
+    color: white;
+  }
+
+  

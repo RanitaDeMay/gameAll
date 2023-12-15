@@ -1,0 +1,78 @@
+<ion-content  color="dark">
+  <!-- BLOQUE DE HEADER -->
+  <header class="header">
+    <div class="header-menu">
+      <ion-title>
+        GameAll
+      </ion-title>
+      <ion-list lines="none">
+        <ion-item (mouseover)="changeColorOnMouseOver($event)" (mouseout)="restoreColorOnMouseOut($event)" (click)="navigateTo('/home')">
+            <ion-label>Inicio</ion-label>
+        </ion-item>
+        <ion-item  (mouseover)="changeColorOnMouseOver($event)" (mouseout)="restoreColorOnMouseOut($event)"(click)="navigateTo('/explorar')">
+          <ion-label>Explorar</ion-label>
+        </ion-item>
+        <ion-item (mouseover)="changeColorOnMouseOver($event)" (mouseout)="restoreColorOnMouseOut($event)" *ngIf="!sesionEncendida" (click)="navigateTo('/login')">
+          <ion-label>Iniciar Sesión</ion-label>
+        </ion-item>
+        <ion-item (mouseover)="changeColorOnMouseOver($event)" (mouseout)="restoreColorOnMouseOut($event)" *ngIf="admin" (click)="navigateTo('/solicitudes')">
+          <ion-label>Solicitudes de juegos</ion-label>
+        </ion-item>
+        <ion-item *ngIf="sesionEncendida" (mouseover)="changeColorOnMouseOver($event)" (mouseout)="restoreColorOnMouseOut($event)" (click)="ocultarMostrar()">
+          <ion-icon name="person" class="sesion"></ion-icon>
+        </ion-item>
+      </ion-list>
+    </div>
+  </header>
+
+  <div class="sesion-informacion" *ngIf="mostrarDiv">
+    <h6>{{ email }}</h6>
+    <h6>{{ nickname }}</h6>
+    <p  *ngIf="admin">administrador</p>
+    <ion-icon name="log-out-outline" (click)="cerrarSesion()"></ion-icon>
+  </div>
+
+  <!-- BLOQUE PARA INSERTAR JUEGOS Y VER SOLICITUDES -->
+  <div class="contenedor-general">
+    <div class="lista-solicitudes">
+      <div class="solicitud"  *ngFor="let solicitudItem of solicitudes$ | async" (click)="seleccionarSolicitud(solicitudItem.data)">
+        <div class="texto">
+          <!-- DEBE APARECER EL NOMBRE DEL JUEGO DE LA SOLICITUD -->
+        <h1>{{ solicitudItem.data.juego }}</h1>
+        <!-- DEBE APARECER EL DESARROLLADOR DEL JUEGO DE LA SOLICITUD -->
+        <h3>{{ solicitudItem.data.desarrollador }}</h3>
+        <!-- DEBE APARECER EL CORREO DEL USUARIO QUE MANDÓ LA SOLICITUD -->
+        <h6>{{ solicitudItem.data.email }}</h6>
+        </div>
+        <div class="botones" >
+          <!-- AL PRESIONAR ESTE BOTÓN SE DEBERÍA DE NOTIFICAR AL USUARIO QUE YA SE AGREGÓ A LA PÁGINA Y SE ELIMINA LA SOLICITUD DE LA COLECCIÓN -->
+          <ion-icon name="checkmark-circle" (click)="aceptarSolicitud(solicitudItem.data.email, solicitudItem.id)" ></ion-icon>
+          <!-- AL PRESIONAR ESTE BOTÓN SIMPLEMENTE SE ELIMA DE LA COLECCIÓN -->
+          <ion-icon name="close-circle" (click)="eliminarSolicitud(solicitudItem.id)"></ion-icon>
+        </div>
+      </div>
+    </div>
+    <div class="formulario-juegos">
+      <form [formGroup]="juegoForm" (ngSubmit)="saveJuego()">
+        <h1>Nuevo juego</h1>
+          <div>
+          <input type="text" name="" id="" placeholder="Nombre juego..." formControlName="nombreJuego">
+          <input type="text" name="" id="" placeholder="Autor juego..." formControlName="autor">
+          </div>
+          <div>
+          <input type="text" name="" id="" placeholder="Género..." formControlName="genero">
+          <!-- ASEGÚRATE DE MANDAR LA FECHA COMO FECHA Y NO COMO NUMÉRICA. 
+            LE HICE UNOS CAMBIOS A TU CÓDIGO DE RESENA, AHÍ PUEDES CHECAR PARA QUE SE MANDE COMO FECHA -->
+          <input type="date" id="" name="" formControlName="lanzamiento">
+          </div>
+          <!-- EN EL CASO DE LA IMAGEN, SERÍA CON PROGRAMACIÓN 
+            TOMAR EL NOMBRE DEL JUEGO, APLICAR LOWER CASE Y CAMBIAR LOS ESPACIOS POR GUIONES BAJOS -->
+          <label for="imagenJuego">Imagen del juego</label>
+          <input type="file" id="imagenID" formControlName="imagen">
+          <textarea name="" id="" cols="30" rows="5" placeholder="Sinopsis..." formControlName="sinopsis"></textarea>
+
+          <button type="submit">Agregar videojuego</button>
+      </form>
+    </div>
+  </div>
+</ion-content>

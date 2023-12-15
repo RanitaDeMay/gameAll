@@ -1,0 +1,146 @@
+//BLOQUE DE CONTENIDO
+.contenedor-global {
+  width: 90%;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.seccion-informacion {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+    "imagen informacion";
+}
+
+.contenedor-imagen {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  grid-area: imagen;
+  border-radius: 10px 0 0 10px;
+  box-shadow: 1px 3px 7px rgba(0,0,0,0.4);
+}
+
+.contenedor-informacion {
+  grid-area: informacion;
+  background: #f1f1f1; 
+  border-radius: 0 10px 10px 0;
+  box-shadow: 1px 3px 7px rgba(0,0,0,0.4);  
+  padding: 15px 25px;
+}
+
+.top-side {
+  display: flex;
+  align-items: center;
+}
+
+.top-side a {
+  margin-left: auto;
+  padding-right: 80px;
+  cursor: pointer;
+}
+
+.top-side ion-icon {
+  font-size: 4rem;
+  color: #515151;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.top-side ion-icon:hover {
+  color: #1b1b1b;
+}
+
+.contenedor-informacion h1 {
+  font-family: 'Arimo', serif;
+  font-size: 3.2rem;
+  color: #000000;
+  margin: 0 0 16px 2px;
+  font-weight: bold;
+  width: 100%;
+  padding-bottom: 14px;
+  padding-top: 10px;
+  border-bottom: solid 1px rgb(92, 92, 92);
+}
+
+.contenedor-informacion h3 {
+  font-size: 2rem;
+  margin: 0 0 5px 2px;
+  font-weight: bold;
+  color: #373737;
+}
+
+.contenedor-informacion h4 {
+  font-size: 1.4rem;
+  margin: 0 0 5px 2px;
+  color: #373737;
+}
+
+.contenedor-informacion p {
+  font-size: 1.2rem;
+  text-align: justify;
+  margin-top: 60px;
+  color: #373737;
+}
+
+.contenedor-informacion h5 {
+  font-size: 1rem;
+  margin: 0 0 5px 2px;
+  color: #555555;
+}
+
+//BLOQUE RESEÑA
+.seccion-resenas {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.seccion-resenas h1 {
+  font-family: 'Arimo', serif;
+  font-size: 3.2rem;
+  padding-bottom: 10px;
+  font-weight: bold;
+  color: #373737;
+}
+
+.resena {
+  margin: 5px;
+  background-color: #d6d6d6;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.resena h2 {
+  font-family: 'Asul', serif;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #000000;
+  margin: 0;
+  padding: 5px 0 6px 20px;
+}
+
+.resena h3 {
+  font-family: 'Arimo', serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #1b1b1b;
+  margin: 0;
+  padding: 0 0 20px 20px;
+}
+
+.resena p {
+  font-family: 'Arimo', serif;
+  font-size: 1.1rem;
+  color: #1e1e1e;
+  margin: 0;
+  padding: 5px 20px 8px 20px;
+}

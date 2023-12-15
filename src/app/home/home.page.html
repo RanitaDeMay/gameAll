@@ -1,20 +1,130 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<!-- BLOQUE DE CUERPO -->
+<ion-content color="dark">
+    <!-- BLOQUE DE HEADER -->
+    <header class="header">
+      <div class="header-menu">
+        <ion-title>
+          GameAll
+        </ion-title>
+        <ion-list lines="none">
+          <ion-item (mouseover)="changeColorOnMouseOver($event)" (mouseout)="restoreColorOnMouseOut($event)" (click)="navigateTo('/home')">
+              <ion-label>Inicio</ion-label>
+          </ion-item>
+          <ion-item  (mouseover)="changeColorOnMouseOver($event)" (mouseout)="restoreColorOnMouseOut($event)"(click)="navigateTo('/explorar')">
+            <ion-label>Explorar</ion-label>
+          </ion-item>
+          <ion-item (mouseover)="changeColorOnMouseOver($event)" (mouseout)="restoreColorOnMouseOut($event)" *ngIf="!sesionEncendida" (click)="navigateTo('/login')">
+            <ion-label>Iniciar Sesión</ion-label>
+          </ion-item>
+          <ion-item (mouseover)="changeColorOnMouseOver($event)" (mouseout)="restoreColorOnMouseOut($event)" *ngIf="admin" (click)="navigateTo('/solicitudes')">
+            <ion-label>Solicitudes de juegos</ion-label>
+          </ion-item>
+          <ion-item *ngIf="sesionEncendida" (mouseover)="changeColorOnMouseOver($event)" (mouseout)="restoreColorOnMouseOut($event)" (click)="ocultarMostrar()">
+            <ion-icon name="person" class="sesion"></ion-icon>
+          </ion-item>
+        </ion-list>
+      </div>
+    </header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <div class="sesion-informacion" *ngIf="mostrarDiv">
+      <h6>{{ email }}</h6>
+      <h6>{{ nickname }}</h6>
+      <p  *ngIf="admin">administrador</p>
+      <ion-icon name="log-out-outline" (click)="cerrarSesion()"></ion-icon>
+    </div>
+    
+  <ion-grid fixed class="contenedor-banner-general">
+    <ion-row>
+      <ion-col>
+        <!-- BLOQUE BANNER -->
+        <div class="banner-contenedor">
+          <swiper-container
+          (slidechange)="swiperSlideChanged($event)"
+          [pagination]="{ clickable: true }"
+          [autoplay]="{ delay: 4500 }"
+          [speed]="1000"
+          >
+            <swiper-slide class="slide1">
+              <h1>HOLLOW KNIGHT</h1>
+              <p>¡Descubre porqué Hollow Knight<br>es el mejor indie de la historia!</p>
+            </swiper-slide>
+            <swiper-slide class="slide2">
+              <h1>TERRARIA</h1>
+              <p>¡Descubre porqué Terraria<br>es el mejor indie de la historia!</p>
+            </swiper-slide>
+            <swiper-slide class="slide3">
+              <h1>ROCKET LEAGUE</h1>
+              <p>¡Experimenta la emoción de la velocidad y la estrategia en Rocket League!<br>
+                  Descubre por qué es el mejor juego de deportes con coches.</p>
+            </swiper-slide>
+          </swiper-container>
+        </div>
+      
+        <!-- BLOQUE RESEÑAS RECIENTES -->
+        <div class="seccion-resena-recientes">
+          <h1 class="separador">Juegos de temporada ></h1>
+          <ion-list color="translucent" class="my-list">
+            <ng-container *ngIf="loading; else content">
+              <div class="loader">
+              </div>
+            </ng-container>
+        
+            <ng-template #content>
+              <div class="resena-reciente" *ngFor="let item of imagenesJuegosRecientes$ | async" 
+                   [style.backgroundImage]="'url(' + item.imagen + ')'">
+                <ion-label color="transparent" (click)="navigateToGame('/juego-resena', item.nombre)">¡Quiero saber más!</ion-label>
+              </div>
+            </ng-template>
+          </ion-list>
+        </div>        
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+        <h1 class="separador">¡Quiero escribir una reseña! ></h1>
+        <div class="section-escribir-resenia-container">
+          <div class="escribir-contenedor">
+            <div class="escribir-subcontenido">
+              <h2>ESCRIBIR RESEÑA</h2>
+              <p>
+                ¡Ayuda a que el resto de los jugadores tomen una buena decisión antes de comprar un videojuego o comparte tu opinión de tu juego favorito!
+              </p>
+              <button (click)="navigateTo('/explorar')">¡Vamos allá!</button>
+            </div>
+          </div>
+          <div *ngIf="topResena$ | async as topResena" class="resenamas-votada">
+            <p id="topResenatitle">¡LA RESEÑA MÁS VOTADA!</p>
+            <img class="circular-image" alt="Imagen Circular" src="https://picsum.photos/200/300">
+            <div class="encabezado-topResena">
+              <h4>{{ topResena.autor }}</h4>
+              <h5>{{ topResena.nombreJuego }}</h5>
+            </div>
+            <p id="topResenaContenido">{{ topResena.contenido }}</p>
+              <button *ngIf="sesionEncendida" (click)="aumentarVotos(topResena.id)"><ion-icon name="heart"></ion-icon></button>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+<!-- BLOQUE DE FOOTER -->
+<ion-footer>
+  <ion-row class="ion-align-items-center">
+    <ion-col size="2" class="ion-text-center">
+      <ion-label class="ion-text-center"><h1>GameAll</h1></ion-label>
+    </ion-col>
+    <ion-col size="4" class="faqs">
+      <ion-label (click)="navigateTo('/explorar')">¿Quién puede leer mi reseña?</ion-label>
+      <ion-label (click)="navigateTo('/explorar')">Quiero hacer una reseña de un juego que no se encuentra en la página</ion-label>
+    </ion-col>
+    <ion-col size="3" class="faqs">
+      <ion-label (click)="navigateTo('/explorar')">Escribir reseña</ion-label>
+      <ion-label (click)="navigateTo('/explorar')">Reseñas recientes</ion-label>
+      <ion-label (click)="navigateTo('/login')">Iniciar sesión</ion-label>
+    </ion-col>
+    <ion-col size="1">
+      <ion-icon name="logo-twitter"></ion-icon>
+    </ion-col>
+    <ion-col size="1">
+      <ion-icon name="logo-facebook"></ion-icon>
+    </ion-col>
+  </ion-row>
+  <h3>TODOS LOS DERECHOS RESERVADOS</h3>
+</ion-footer>
 </ion-content>

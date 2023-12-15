@@ -1,0 +1,156 @@
+//SECCIÓN DE SOLICITUDES Y AGREGAR JUEGOS
+.contenedor-general {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    width: 90%;
+    height: 85vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.lista-solicitudes {
+    background: #111111;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 5px;
+    padding: 10px;
+    overflow: scroll;
+    scroll-behavior: smooth;
+}
+
+.solicitud {
+    background: #f1f1f1;
+    display: flex;
+    padding: 10px;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+    z-index: 20;
+}
+
+.texto {
+    text-align: left;
+    color: #282828;
+    font-family: 'Arimo', serif;
+    flex: 2;
+}
+
+.texto h1 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #000000;
+    margin: 2px 0 2px 0;
+}
+
+.texto h3 {
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.texto h6 {
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.botones {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-around;
+    gap: 5px;
+}
+
+.botones ion-icon {
+    padding: 10px 0 10px 0;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    font-size: 2.3rem;
+    transition: 0.5s;
+}
+
+.botones ion-icon:hover {
+    box-shadow: 2px 4px 5px rgba(0,0,0,0.5);
+}
+
+.botones ion-icon:first-child {
+    background: rgb(23, 84, 23);
+}
+
+.botones ion-icon:last-child {
+    background: rgb(153, 41, 41);
+}
+
+input:focus {
+    outline: none;
+}
+
+//BLOQUE DEL FORMULARIO
+.formulario-juegos {
+    display: flex;
+    flex: 1;
+}
+
+form {
+    width: 100%;
+    background: #282828;
+    padding: 30px;
+    margin: 0;
+    color: #d4d4d4;
+    font-family: 'Arimo', serif;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form h1 {
+    font-weight: 500;
+    margin: 0 0 10px 0;
+    font-size: 2.5rem;
+}
+
+form label, form textarea {
+    color: white;
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+form input {
+    border: none;
+    padding: 12px;
+    font-size: 1.2rem;
+}
+
+form div {
+    display: flex;
+    gap: 10px;
+}
+
+form button {
+    margin-top: auto;
+    padding: 20px;
+    color: white;
+    font-size: 1.3rem;
+    background: #2f7423;
+}
+
+textarea {
+    padding: 10px;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+
+
+
+/////////////////
+.solicitud:hover {
+  cursor: pointer;
+  transform: scale(1.02);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  background-color: #99d380;
+}

@@ -1,0 +1,109 @@
+swiper-container {
+    width: 100%;
+    height: 100%;
+  }
+  
+  swiper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  swiper-container::part(container) {
+    border-radius: 20px;
+  }
+  
+  .slide1 {
+    background: url('../../assets/banner/Back.png');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .slide2 {
+    background: url('../../assets/banner/Back2.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .slide3 {
+    background: url('../../assets/banner/Back3.png');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  swiper-container::part(bullet) {
+    background-color: white;
+    width: 20px;
+    height: 20px;
+    opacity: 1;
+  }
+  
+  swiper-container::part(bullet-active) {
+    background-color: rgb(255, 238, 4);
+    width: 20px;
+    height: 20px;
+  }
+  
+  swiper-container::part(button-prev) {
+    color: black;
+  }
+  
+  swiper-container::part(button-next) {
+    color: black;
+  }
+
+  #topResenaContenido{
+    font-size: 1.1rem;
+    padding-bottom: 15px;
+    overflow: hidden;
+  }
+  
+  .encabezado-topResena {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  .encabezado-topResena h4 {
+    font-family: 'Arimo';
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    align-self: center;
+    padding: 8px 0 5px 0;
+    margin: 0;
+  }
+  
+  .encabezado-topResena h5 {
+    font-family: 'Cabin';
+    font-size: 1.2rem;
+    align-self: center;
+    color: #e9e9e9;
+    margin: 0;
+  }
+  
+  .resenamas-votada button {
+    width: 100%;
+    padding: 15px;
+    background-color: rgb(213, 211, 211);
+    border-radius: 0 0 10px 10px;
+    font-family: 'Comic neue', cursive;
+    font-size: 1.2rem;
+    color: #282828;
+    transition: 0.5s;
+    font-size: 1.5rem;
+  }
+  
+  .resenamas-votada button:hover {
+    color: white;
+    background-color: rgb(226, 65, 65);
+  }
+  
+  .circular-image {
+    border-radius: 50%;
+    width: 140px; 
+    height: 140px;
+  }
+  

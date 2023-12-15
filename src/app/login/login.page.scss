@@ -1,0 +1,111 @@
+//HEADER
+@import url('https://fonts.googleapis.com/css2?family=Arimo&family=Asul&family=Cairo:wght@900&family=Cinzel&family=Comic+Neue&display=swap');
+
+.contenedor {
+  height: 100vh;
+  background: url('../../assets/login-registro/login.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.iniciar-sesion {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background: rgba(0,0,0,0.3);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  margin-right: 200px;
+  height: 510px;
+  width: 400px;
+  padding: 40px;
+}
+
+form h1 {
+  font-family: 'Cairo', serif;
+  font-size: 3.7rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+form label {
+  font-family: 'Asul', serif;
+  font-size: 1.3rem;
+  margin-top: 15px;
+  margin-bottom: 2px;
+  margin-left: 2px;
+}
+
+form input {
+  padding: 15px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  font-family: 'Arimo', serif;
+  font-size: 1.2rem;
+  background-color: rgb(49, 49, 49);
+}
+
+form input:focus {
+  outline: none;
+}
+
+form button {
+  margin-top: 30px;
+  padding: 15px;
+  color: rgb(0, 0, 0);
+  border-radius: 10px;
+  background: white;
+  font-size: 1.25rem;
+  font-family: 'Arimo', serif;
+  transition: 0.4s;
+}
+
+form button:hover {
+ background: #506c55;
+ color: white;
+}
+
+form p {
+  padding-top: 10px;
+  font-family: 'Asul', serif;
+  text-align: center;
+}
+
+form p a {
+  text-decoration: none;
+  color: rgb(68, 182, 68);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+form p a:hover {
+  color: rgb(101, 224, 101);
+}
+
+.back {
+  z-index: 10;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  font-family: 'Asul', serif;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.back ion-icon {
+  font-size: 3rem;
+}
+
+.back:hover {
+  color: rgba(255,255,255,0.6);
+}
